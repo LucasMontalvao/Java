@@ -166,6 +166,7 @@ public class Main {
                     opcao = ler.nextInt();
                     //bloco de repetição para a escolha da operação
                     //enquanto o cair fora for falso vai continuar dentro do loop de repetição
+                    cair_fora = false;
                     while (cair_fora == false) {
                         if (opcao == 1) {
                             ProcedimentoPadrao();
@@ -178,6 +179,7 @@ public class Main {
                             } else {
                                 //caso não possua não é possível fazer a multiplicação
                                 System.out.println("Não é possíve multiplicar essa matriz");
+                                opcao = 0;
                             }
                         }
                         if (opcao == 2) {
@@ -196,6 +198,7 @@ public class Main {
                             } else {
                                 //caso as matrizes não possuem as mesmas dimensões
                                 System.out.printf("Não é possível fazer a operação");
+                                opcao = 0;
                             }
                         }
                     /*Implementação Futura
@@ -218,6 +221,7 @@ public class Main {
                             } else {
                                 //caso as matrizes não possuem as mesmas dimensões
                                 System.out.printf("Não é possível fazer a operação");
+                                opcao = 0;
                             }
                         }
                         //caso passe por todas as opções e o usuario tenha digitado 5
@@ -229,7 +233,7 @@ public class Main {
                         primeira_vez = false;
                     }
                 }
-                System.out.printf("Fim do programa\n");
+                //System.out.printf("Fim do programa\n");
 
             //caso o usuário não tenha digitado letra ao inves de numero
             } catch (InputMismatchException erro1) {
@@ -242,9 +246,11 @@ public class Main {
                 //Sai do bloco de repetição mais externo
                 if(decisao == 1){
                     Try = false;
-                }else{
+                }else if(decisao == 2){
                     opcao = 0;
                     Try = true;
+                }else{
+                    Try = false;
                 }
             }
         }

@@ -1,12 +1,19 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Students {
 	private String name;
 	private int idade;
 	private String registration;
+	private List<Matter> materias;
 	
-	public Students() {}
+	public Students() {
+		materias = new ArrayList<>();
+	}
 	public Students(String name, int idade, String registration) {
+		materias = new ArrayList<>();
 		setName(name);
 		setIdade(idade);
 		setRegistration(registration);
@@ -29,5 +36,10 @@ public class Students {
 	public void setRegistration(String registration) {
 		this.registration = registration;
 	}
-
+	public void setNotas(Matter matter) {
+		materias.add(matter);
+	}
+	public List<Matter> getMatter() {
+		return materias;
+	}
 }

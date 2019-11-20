@@ -1,5 +1,6 @@
 package controller;
 
+import model.Matter;
 import model.Students;
 import view.StudentView;
 
